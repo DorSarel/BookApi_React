@@ -1,16 +1,15 @@
 .container {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   max-width: 120rem;
   margin: 15rem auto;
   background-color: #eee;
-}
-
-.header {
-  height: 7rem;
-  background-color: #fff;
+  overflow: hidden;
 }
 
 .content {
   display: flex;
+  min-height: 30rem;
 }
 
 .sidebar {
