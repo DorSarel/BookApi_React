@@ -1,0 +1,24 @@
+.container {
+  max-width: 120rem;
+  margin: 15rem auto;
+  background-color: #eee;
+}
+
+.header {
+  height: 7rem;
+  background-color: #fff;
+}
+
+.content {
+  display: flex;
+}
+
+.sidebar {
+  background-color: yellowgreen;
+  flex: 0 0 18%;
+}
+
+.gallery {
+  background-color: blanchedalmond;
+  flex: 1;
+}
