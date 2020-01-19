@@ -5,12 +5,14 @@ import './style.scss';
 export const Gallery = ({ books }) => {
   return (
     <ul className='gallery'>
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      {books.map((book, idx) => (
+        <Book
+          key={idx}
+          img={book.img}
+          title={book.title}
+          authors={book.authors}
+        />
+      ))}
     </ul>
   );
 };
