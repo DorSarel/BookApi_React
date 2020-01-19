@@ -1,0 +1,10 @@
+.gallery {
+  list-style: none;
+  background-color: blanchedalmond;
+  flex: 1;
+  padding: 1.5rem 3rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

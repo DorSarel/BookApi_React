@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Layout } from './container/Layout';
+import { Gallery } from './container/Gallery';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 
@@ -10,7 +11,7 @@ export class App extends Component {
         <Header />
         <main className='content'>
           <Sidebar />
-          <div className='gallery'>Gallery</div>
+          <Gallery />
         </main>
       </Layout>
     );
