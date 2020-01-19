@@ -8,6 +8,7 @@ import { getData } from './AppDataProvider';
 export class App extends Component {
   state = {
     books: [],
+    searchTerm: '',
   };
 
   componentDidMount() {
@@ -16,10 +17,27 @@ export class App extends Component {
     });
   }
 
+  onSearchTermChange = e => {
+    this.setState({ searchTerm: e.target.value });
+  };
+
+  searchBooksByTerm = e => {
+    e.preventDefault();
+    if (this.state.searchTerm) {
+      getData(this.state.searchTerm).then(books => {
+        this.setState({ books });
+      });
+    }
+  };
+
   render() {
     return (
       <Layout name='content'>
-        <Header />
+        <Header
+          change={this.onSearchTermChange}
+          search={this.searchBooksByTerm}
+          bookToSearch={this.state.searchTerm}
+        />
         <main className='content'>
           <Sidebar />
           <Gallery books={this.state.books} />
