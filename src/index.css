@@ -1,3 +1,11 @@
+:root {
+  --color-background: #a0eec0;
+  --color-primary: #72a276;
+  --color-3: #86cd82;
+  --color-4: hsla(161, 51%, 57%, 1);
+  --color-secondary: #666b6a;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -20,5 +28,5 @@ body {
   line-height: 1.6;
   min-height: 100vh;
 
-  background-color: orangered;
+  background-color: var(--color-background);
 }

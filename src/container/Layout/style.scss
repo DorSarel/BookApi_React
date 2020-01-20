@@ -3,7 +3,8 @@
   border-top-right-radius: 5px;
   max-width: 120rem;
   margin: 15rem auto;
-  background-color: #eee;
+  background-color: var(--color-primary);
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 

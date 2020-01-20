@@ -10,6 +10,6 @@ export const Sidebar = () => (
         </a>
       </li>
     </ul>
-    <p className='copyright'>This app was build by Dor Sarel</p>
+    <p className='copyright'>This app was built by Dor Sarel</p>
   </nav>
 );
