@@ -13,10 +13,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (max-width: 50em) {
+      margin-right: 3.5rem;
+    }
+
+    @media only screen and (max-width: 31.25em) {
+      margin-left: 2rem;
+    }
   }
 
   &__form {
     flex: 0 0 30%;
+
+    @media only screen and (max-width: 50em) {
+      flex: 0 0 40%;
+    }
   }
 
   &__search-input {

@@ -6,9 +6,18 @@
   background-color: var(--color-primary);
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+
+  @media only screen and (max-width: 75em) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .content {
   display: flex;
-  // min-height: 30rem; // For Test
+
+  @media only screen and (max-width: 42.5em) {
+    flex-direction: column;
+  }
 }

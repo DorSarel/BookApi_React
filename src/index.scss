@@ -11,6 +11,9 @@
   padding: 0;
 }
 
+/* Breakpoints Vars */
+$bp-largeScreen: 75em; // 1200px
+
 *,
 *::before,
 *::after {
@@ -20,6 +23,14 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-largeScreen) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: 42.5em) {
+    font-size: 37.5%;
+  }
 }
 
 body {

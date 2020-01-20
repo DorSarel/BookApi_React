@@ -9,6 +9,10 @@
   &__list {
     margin-top: 2.25rem;
     list-style: none;
+    @media only screen and (max-width: 42.5em) {
+      display: flex;
+      margin-top: 0;
+    }
   }
 
   &__item {
@@ -48,4 +52,8 @@
   font-size: 1.4rem;
   text-align: center;
   text-transform: uppercase;
+
+  @media only screen and (max-width: 42.5em) {
+    display: none;
+  }
 }
