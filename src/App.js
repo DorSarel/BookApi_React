@@ -25,7 +25,7 @@ export class App extends Component {
     e.preventDefault();
     if (this.state.searchTerm) {
       getData(this.state.searchTerm).then(books => {
-        this.setState({ books });
+        this.setState({ books, searchTerm: '' });
       });
     }
   };
