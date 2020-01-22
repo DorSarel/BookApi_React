@@ -1,3 +1,5 @@
+@import '../../bp.scss';
+
 .sidebar {
   flex: 0 0 18%;
   display: flex;
@@ -9,7 +11,7 @@
   &__list {
     margin-top: 2.25rem;
     list-style: none;
-    @media only screen and (max-width: 42.5em) {
+    @media only screen and (max-width: $bp-smallScreen) {
       display: flex;
       margin-top: 0;
     }
@@ -53,7 +55,7 @@
   text-align: center;
   text-transform: uppercase;
 
-  @media only screen and (max-width: 42.5em) {
+  @media only screen and (max-width: $bp-smallScreen) {
     display: none;
   }
 }

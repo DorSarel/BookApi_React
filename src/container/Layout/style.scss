@@ -1,3 +1,5 @@
+@import '../../bp.scss';
+
 .container {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -7,7 +9,7 @@
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: $bp-largeScreen) {
     margin: 0;
     max-width: 100%;
     width: 100%;
@@ -17,7 +19,7 @@
 .content {
   display: flex;
 
-  @media only screen and (max-width: 42.5em) {
+  @media only screen and (max-width: $bp-smallScreen) {
     flex-direction: column;
   }
 }

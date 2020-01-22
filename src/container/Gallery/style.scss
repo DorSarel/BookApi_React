@@ -1,3 +1,5 @@
+@import '../../bp.scss';
+
 .gallery {
   list-style: none;
   flex: 1;
@@ -12,7 +14,7 @@
     margin-top: 3rem;
   }
 
-  @media only screen and (max-width: 50em) {
+  @media only screen and (max-width: $bp-mediumScreen) {
     flex-direction: column;
     flex-wrap: nowrap;
   }

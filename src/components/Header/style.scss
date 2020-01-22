@@ -1,3 +1,5 @@
+@import '../../bp.scss';
+
 .header {
   height: 7rem;
   background-color: #82aba1;
@@ -14,11 +16,11 @@
     justify-content: center;
     align-items: center;
 
-    @media only screen and (max-width: 50em) {
+    @media only screen and (max-width: $bp-mediumScreen) {
       margin-right: 3.5rem;
     }
 
-    @media only screen and (max-width: 31.25em) {
+    @media only screen and (max-width: 31$bp-xsmallScreen) {
       margin-left: 2rem;
     }
   }
@@ -26,7 +28,7 @@
   &__form {
     flex: 0 0 30%;
 
-    @media only screen and (max-width: 50em) {
+    @media only screen and (max-width: $bp-mediumScreen) {
       flex: 0 0 40%;
     }
   }
