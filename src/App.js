@@ -8,6 +8,7 @@ import { getData } from './AppDataProvider';
 export class App extends Component {
   state = {
     books: [],
+    favorites: [],
     searchTerm: '',
   };
 
