@@ -31,6 +31,21 @@ export class App extends Component {
     }
   };
 
+  addBookToFavorites = book => {
+    // check if book already in favrites
+    if (
+      this.state.favorites.length > 0 &&
+      this.state.favorites.findIndex(item => item.id === book.id) !== -1
+    ) {
+      // yes - alert already in favorites (later should change button)
+      alert(`${book.title} already in your favorites`);
+      return;
+    }
+    // add book to start of favorites
+    const favorites = [book, ...this.state.favorites];
+    this.setState({ favorites });
+  };
+
   render() {
     return (
       <Layout name='content'>
@@ -41,7 +56,7 @@ export class App extends Component {
         />
         <main className='content'>
           <Sidebar />
-          <Gallery books={this.state.books} />
+          <Gallery books={this.state.books} addBook={this.addBookToFavorites} />
         </main>
       </Layout>
     );
