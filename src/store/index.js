@@ -1,4 +1,6 @@
 import { createStore } from 'redux';
+import { ADD_BOOK_TO_FAVORITES } from './actionTypes';
+import { addBookToFavorites } from './selectors';
 
 const initialState = {
   books: [],
@@ -6,6 +8,10 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_BOOK_TO_FAVORITES:
+      return addBookToFavorites(state, action.payload);
+  }
   return state;
 };
 
