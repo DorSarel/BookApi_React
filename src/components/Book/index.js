@@ -1,13 +1,19 @@
 import React from 'react';
 import './style.scss';
-import plusIcon from '../../assets/img/plus.svg';
-import { ReactComponent as Icon } from '../../assets/img/plus.svg';
+import { ReactComponent as PlusIcon } from '../../assets/img/plus.svg';
 
-export const Book = ({ img, title, authors = [], addBook }) => {
+export const Book = ({ img, title, authors = [], disabled, addBook }) => {
   let formattedAuthors = authors.reduce((acc, author) => {
     return acc + `${author} & `;
   }, '');
   formattedAuthors = formattedAuthors.substring(0, formattedAuthors.length - 2);
+
+  let toggleButton = (
+    <React.Fragment>
+      <span className='book__btn-text'>Add to favorites</span>
+      <PlusIcon />
+    </React.Fragment>
+  );
 
   return (
     <li className='book'>
@@ -17,9 +23,8 @@ export const Book = ({ img, title, authors = [], addBook }) => {
       <div className='book__details'>
         <h2 className='book__title'>{title}</h2>
         <p className='book__authors'>{formattedAuthors}</p>
-        <button onClick={addBook} className='book__btn-add'>
-          <span className='book__btn-text'>Add to favorites</span>
-          <Icon />
+        <button onClick={addBook} disabled={disabled} className='book__btn-add'>
+          {toggleButton}
         </button>
       </div>
     </li>

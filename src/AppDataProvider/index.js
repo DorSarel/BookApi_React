@@ -8,6 +8,7 @@ const serializeBook = item => {
     title: item.volumeInfo.title,
     authors: item.volumeInfo.authors,
     img: item.volumeInfo.imageLinks.smallThumbnail,
+    isInFavorites: false,
   };
 };
 

@@ -13,6 +13,7 @@ export const Gallery = ({ books = [], addBook }) => {
         img={book.img}
         title={book.title}
         authors={book.authors}
+        disabled={book.isInFavorites}
         addBook={() => {
           addBook(book);
         }}

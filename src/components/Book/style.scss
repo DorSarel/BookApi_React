@@ -73,6 +73,10 @@
     &:hover {
       cursor: pointer;
     }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   &__btn-text {

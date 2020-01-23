@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { Layout } from './container/Layout';
 import { Gallery } from './container/Gallery';
 import { Header } from './components/Header';
@@ -32,7 +33,7 @@ export class App extends Component {
   };
 
   addBookToFavorites = book => {
-    // check if book already in favrites
+    // check if book already in favorites
     if (
       this.state.favorites.length > 0 &&
       this.state.favorites.findIndex(item => item.id === book.id) !== -1
@@ -42,6 +43,7 @@ export class App extends Component {
       return;
     }
     // add book to start of favorites
+    book.isInFavorites = true;
     const favorites = [book, ...this.state.favorites];
     this.setState({ favorites });
   };
