@@ -44,7 +44,8 @@
     font-size: 1.5rem;
     text-decoration: none;
     padding: 1.5rem 3rem;
-    display: block;
+    display: flex;
+    align-items: center;
     color: currentColor;
   }
 }
@@ -58,4 +59,11 @@
   @media only screen and (max-width: $bp-smallScreen) {
     display: none;
   }
+}
+
+svg {
+  fill: currentColor;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1.5rem;
 }
