@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import { connect } from 'react-redux';
+import { getBooksActionCreator } from './store/actionTypes';
 import { Layout } from './container/Layout';
 import { GalleryContainer } from './container/Gallery';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
-import { getData } from './AppDataProvider';
 
-export class App extends Component {
+class App extends Component {
   state = {
     searchTerm: '',
   };
 
   componentDidMount() {
-    // TBD - should call for redux func
-    getData('harry potter').then(books => {
-      this.setState({ books });
-    });
+    const { getBooks } = this.props;
+    getBooks('harry potter');
   }
 
   onSearchTermChange = e => {
@@ -23,12 +21,10 @@ export class App extends Component {
   };
 
   searchBooksByTerm = e => {
-    // Redux
     e.preventDefault();
     if (this.state.searchTerm) {
-      getData(this.state.searchTerm).then(books => {
-        this.setState({ books, searchTerm: '' });
-      });
+      this.props.getBooks(this.state.searchTerm);
+      this.setState({ searchTerm: '' });
     }
   };
 
@@ -42,9 +38,17 @@ export class App extends Component {
         />
         <main className='content'>
           <Sidebar />
-          <GalleryContainer books={this.state.books} />
+          <GalleryContainer />
         </main>
       </Layout>
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getBooks: searchTerm => dispatch(getBooksActionCreator(searchTerm)),
+  };
+};
+
+export const AppContainer = connect(null, mapDispatchToProps)(App);

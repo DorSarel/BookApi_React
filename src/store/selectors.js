@@ -5,14 +5,16 @@ export const addBookToFavorites = (state, book) => {
     state.favorites.findIndex(item => item.id === book.id) !== -1
   ) {
     // yes - alert already in favorites (later should change button)
-    //alert(`${book.title} already in your favorites`);
-    return;
+    alert(`${book.title} is already in favorites books`);
+    return {
+      ...state,
+    };
   }
-  // add book to start of favorites
+
   book.isInFavorites = true;
-  const favorites = [book, ...this.state.favorites];
   return {
     ...state,
-    favorites,
+    books: [...state.books],
+    favorites: [book, ...state.favorites],
   };
 };
